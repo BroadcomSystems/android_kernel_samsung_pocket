@@ -1,1 +1,1 @@
-# android_device_samsung_pocket
+# android_kernel_samsung_pocket
