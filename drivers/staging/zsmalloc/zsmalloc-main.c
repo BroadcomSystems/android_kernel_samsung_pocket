@@ -944,7 +944,7 @@ void zs_free(struct zs_pool *pool, unsigned long obj)
 	spin_lock(&class->lock);
 
 	/* Insert this object in containing zspage's freelist */
-	link = (struct link_free *)((unsigned char *)kmap_atomic(f_page)
+	link = (struct link_free *)((unsigned char *)kmap_atomic(f_page, KM_USER0)
 							+ f_offset);
 	link->next = first_page->freelist;
 	kunmap_atomic(link, KM_USER0);
@@ -1070,4 +1070,3 @@ module_exit(zs_exit);
 
 MODULE_LICENSE("Dual BSD/GPL");
 MODULE_AUTHOR("Nitin Gupta <ngupta@vflare.org>");
-

@@ -123,4 +123,3 @@ struct zram {
 	struct zram_stats stats;
 };
 #endif
-
