@@ -509,8 +509,6 @@ int jffs2_do_create(struct jffs2_sb_info *c, struct jffs2_inode_info *dir_f,
 
 	fd = jffs2_write_dirent(c, dir_f, rd, qstr->name, qstr->len, ALLOC_NORMAL);
 
-	fd = jffs2_write_dirent(c, dir_f, rd, name, namelen, ALLOC_NORMAL);
-
 	jffs2_free_raw_dirent(rd);
 
 	if (IS_ERR(fd)) {
